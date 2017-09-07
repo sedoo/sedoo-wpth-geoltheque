@@ -15,7 +15,7 @@ include("js/commons-map.php");
             'post_type' => array( 'fichesortie' )
         );
         
-        addMap("mapHome", "osm, brgm", "true", "1.438161,43.601699", "7", "true", $argsQuery, "false");
+        addMap("mapHome", "osm, brgm", "true", "1.438161,43.601699", "8", "true", $argsQuery, "false");
         ?>
         
         <div id="mapHome"></div>
@@ -32,7 +32,7 @@ include("js/commons-map.php");
             // Creation de la liste des terms de la taxonomie nommée
                 $argsTerms = array(
                     'orderby'    => 'asc',
-                    'hide_empty' => 0
+                    'hide_empty' => true,
                 );
             $terms=get_terms(activites,$argsTerms); 
 
@@ -63,7 +63,7 @@ include("js/commons-map.php");
                                         
             $argsTerms = array(
             'orderby'    => 'asc',
-            'hide_empty' => 0
+            'hide_empty' => true,
             );
             $terms=get_terms(themes,$argsTerms); 
 
@@ -86,7 +86,7 @@ include("js/commons-map.php");
             $argsTerms = array(
             'order'    => 'ASC',
             'orderby'    => 'slug',
-            'hide_empty' => 0
+            'hide_empty' => true,
             );
             $terms=get_terms(niveau,$argsTerms); 
 
