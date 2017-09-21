@@ -27,6 +27,8 @@
                 <i class="icon-wheelchair<?php $selected = get_field('radio-acces_handicape-detail_sortie-edugeol'); if($selected == 'oui') { echo ' color-black';} ?>"></i>
             </figure>
             <p> 
+                <?php
+                if($selected == 'non') { echo ' Site non accessible<br/>';} ?>
                 <?php the_field('texte-acces_handicape-detail_sortie-edugeol'); ?>
             </p>
         </div>
