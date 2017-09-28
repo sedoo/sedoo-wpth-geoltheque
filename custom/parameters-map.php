@@ -150,7 +150,7 @@ function addMap($map, $useLayers, $control, $center, $zoom, $useQuery, $argsQuer
                 echo "longlat = coordMarker_".$i.".transform(projSpherique,projCarte_".$map.");";
                 echo "popupClass = AutoSizeAnchored;";
                 // contenu HTML
-                echo "popupContentHTML = '<h1>".get_the_title()."</h1><img src=\"".get_the_post_thumbnail_url()."\"><a href=\"".get_the_permalink()."\">Accéder à la fiche</a>';";
+                echo "popupContentHTML = '<h1><span class=\"close\">X</span> ".get_the_title()."</h1><img src=\"".get_the_post_thumbnail_url()."\"><a href=\"".get_the_permalink()."\">Accéder à la fiche</a>';";
                 
                 // Création du marker par la function addMarker() , voir ci-dessous...
                 echo "addMarker(longlat, popupClass, popupContentHTML);";
@@ -166,7 +166,7 @@ function addMap($map, $useLayers, $control, $center, $zoom, $useQuery, $argsQuer
         echo "longlat = coordMarker_".get_the_ID().".transform(projSpherique,projCarte_".$map.");";
         echo "popupClass = AutoSizeAnchored;";
         // contenu HTML
-        echo "popupContentHTML = '<h1>".get_the_title()."</h1><img src=\"".get_the_post_thumbnail_url()."\"><a href=\"".get_the_permalink()."\">Accéder à la fiche</a>';";
+        echo "popupContentHTML = '<h1><span class=\"close\">X</span> ".get_the_title()."</h1><img src=\"".get_the_post_thumbnail_url()."\"><a href=\"".get_the_permalink()."\">Accéder à la fiche</a>';";
 
         // Création du marker par la function addMarker() , voir ci-dessous...
         echo "addMarker(longlat, popupClass, popupContentHTML);";
@@ -187,6 +187,15 @@ function addMap($map, $useLayers, $control, $center, $zoom, $useQuery, $argsQuer
                     this.popup = this.createPopup(this.closeBox);
                     ".$map.".addPopup(this.popup);
                     this.popup.show();
+                ";
+                 // close button sur popup
+                 echo "
+                 $(\".close\").click(function(){
+                     //console.log(this.closest(\".olPopup\"));
+                    $(this).closest(\".olPopup\").css(\"display\", \"none\");
+                 });
+                 ";    
+                echo "    
                 } else {
                     this.popup.toggle();
                 }
@@ -196,9 +205,10 @@ function addMap($map, $useLayers, $control, $center, $zoom, $useQuery, $argsQuer
             marker.events.register(\"mousedown\", feature, markerClick);
 
             calqueMarkers_".$map.".addMarker(marker);
+            
     }
     ";
-    
+       
     if ($callInTab == "true") {
         echo "}, 200); "; // end setTimetout 
     }
@@ -210,12 +220,15 @@ function addMap($map, $useLayers, $control, $center, $zoom, $useQuery, $argsQuer
     // Restore original Post Data
     wp_reset_postdata();
     
-    echo "<script>
+    echo "<script>";
+    echo "
         $(document).ready(function(){
             ".$map."();
+           
         });
+        "; 
 
-    </script>";
+    echo "</script>";
     
 }
 
