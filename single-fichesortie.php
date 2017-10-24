@@ -163,6 +163,7 @@ $location = get_field('lieu-detail_sortie-edugeol');
                                     // GET PAGE BY ID                                        
                                     $argsQuery = array (
                                         'post_type' => array( 'arretsortie' ),
+                                        'posts_per_page' => -1,
                                         'post__in' => $fichearret
                                     );
                                     addMap("mapArrets", "osm, brgm", "true", "".$location['lng'].",".$location['lat']."", "9", "true", $argsQuery, "true");
