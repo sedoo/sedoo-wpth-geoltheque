@@ -12,7 +12,8 @@ include("js/commons-map.php");
         
         // WP_Query arguments
         $argsQuery = array (
-            'post_type' => array( 'fichesortie' )
+            'post_type' => array( 'fichesortie' ),
+            'posts_per_page' => -1,
         );
         
         addMap("mapHome", "osm, brgm", "true", "1.438161,43.601699", "8", "true", $argsQuery, "false");
