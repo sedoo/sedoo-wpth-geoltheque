@@ -116,15 +116,3 @@
                 </p>
         </div>
     </section>
-    <!-- ********************* AUTEUR ******************-->
-
-    <section>
-        <h3>Auteur</h3>
-            <div role="information">                             
-                <h4> 
-                    <?php the_author_meta(user_nicename); ?>
-                </h4>
-                <p><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">Voir les autres publications de l'auteur</a> 
-                </p>
-        </div>
-    </section>
