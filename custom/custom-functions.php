@@ -39,7 +39,7 @@ include 'custom-post-type.php';
 */
 include 'parameters-map.php';
 
-/******************************************************************
+/******************************************************************@
 * GESTION DES IMAGES
 *
 * Support des thumbnails (images à la une)
@@ -48,3 +48,24 @@ include 'parameters-map.php';
 * 
 */
 include 'custom-config-images.php';
+
+/******************************************************************
+* ACF GOOGLE MAP API KEY
+*
+*/
+function geoltheque_acf_init() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyDZUik7BZl1ibw28RI5KYLr8fFEjZwL8O8');
+}
+
+add_action('acf/init', 'geoltheque_acf_init');
+
+// function geoltheque_acf_google_map_api( $api ){
+	
+// 	$api['key'] = 'AIzaSyDZUik7BZl1ibw28RI5KYLr8fFEjZwL8O8';
+	
+// 	return $api;
+	
+// }
+
+// add_filter('acf/fields/google_map/api', 'geoltheque_acf_google_map_api');

@@ -6,7 +6,7 @@ Author URI: http://sedoo.fr
 Description: Géolthèque SUD OUEST
 Text Domain: lithoteque
 Tags:
-Version: 2.2.1
+Version: 2.2.2
 GitHub Theme URI: sedoo/sedoo-wpth-geoltheque
 GitHub Branch: master
 */
@@ -276,26 +276,14 @@ body>nav {
     color: #58595B;
 }
 
-/*----- SVG ACTIVITES -----*/
-
-/*.fill-svg {
-    fill: #B0B2B3;
-}
-.stroke-svg {
-    stroke: #E4E3E5;
-}*/
-
 [role="filtre-activites"] figure:not(.active) svg {
-    /*fill: #DD9946;*/
     filter:grayscale(100%);
 }
-[role="filtre-activites"] figure:not(.active):hover svg {
-    /*fill: #DD9946;*/
+/* Desactivation des liens sur les activités, et du :hover qui allait avec... */ 
+/* [role="filtre-activites"] figure:not(.active):hover svg {
     filter:grayscale(20%);
-}
-/*[role="filtre-activites"] figure.active .stroke-svg {
-    stroke: #DD9946;
-}*/
+} */
+
 
 /*******
 *         MAIN 
@@ -1071,7 +1059,7 @@ li{
 }
 
 .homeContainer section > h1 {
-    width: 180px;
+    width: 220px;
     height: 50px;
     margin:0;
     padding:0 10px;
@@ -1082,6 +1070,7 @@ li{
     color: white;
     font-size: 1em;
     line-height: 50px;
+    text-align: center;
     text-transform: uppercase;
     z-index: 1000;
 }
