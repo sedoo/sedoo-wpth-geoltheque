@@ -34,7 +34,7 @@
 
 
 <?php the_terms( $post->ID, 'themes', 'THEMES : ' ); ?><br>
-<?php the_terms( $post->ID, 'activites', 'ACTIVITES : ' ); ?><br>
+<?php the_terms( $post->ID, 'activites', 'COMPETENCES : ' ); ?><br>
 <?php the_terms( $post->ID, 'niveau', 'NIVEAU : ' ); ?><br>
 
 get_terms ( array|string $args = array(), array $deprecated = '' )

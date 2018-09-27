@@ -62,11 +62,12 @@ $location = get_field('lieu-detail_sortie-edugeol');
                 <!-- ********************* ACTIVITES ******************-->
                  
                 <section role="filtre-activites">
-                    <h1>ACTIVITES</h1>                    
+                    <h1>Compétences</h1>                    
                     <?php
                     // Creation de la liste des terms de la taxonomie nommée
                         $argsTerms = array(
-                            'orderby'    => 'asc',
+                            'order'      => 'ASC',
+                            'orderby'    => 'slug',
                             'hide_empty' => 0
                         );
                     $terms=get_terms(activites,$argsTerms); 
@@ -78,15 +79,17 @@ $location = get_field('lieu-detail_sortie-edugeol');
                                 echo ' class="active"';
                             }
                             endif; 
+                        // Désactivation des liens sur les activités...  
+                        //   <a href="'.get_term_link( $term ).'" title="Voir toutes les sorties de cette activité"></a>
                         echo '>
-                        <a href="'.get_term_link( $term ).'" title="Voir toutes les sorties de cette activité">
+                        
                         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="103px" height="103px" viewBox="0 0 245.986 254.986" enable-background="new 0 0 245.986 254.986" xml:space="preserve">
                         
                             <use xlink:href="#'.$term->slug.'" /> </svg>
                             <figcaption>
                             ' . $term->name . '
                             </figcaption>   
-                            </a>
+                            
                         </figure>';
                       }
                     } 
