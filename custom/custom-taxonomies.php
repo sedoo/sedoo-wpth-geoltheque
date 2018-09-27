@@ -53,23 +53,24 @@ function my_custom_taxonomies()
 
     /*** 
     *  TAXONOMIE ACTIVITES 
+    * Correctifs de label 20180927, suite réunion avec les Users > Compétences... 
     */   
     
     $labels_activites = array(
-        'name' => 'Activités',
-        'singular_name' => 'Activités',
-        'all_items' => 'Toutes les activités',
-        'edit_item' => 'Éditer l\'activité',
-        'view_item' => 'Voir l\'activité',
-        'update_item' => 'Mettre à jour l\'activité',
-        'add_new_item' => 'Ajouter une activité',
-        'new_item_name' => 'Nouvelle activité',
-        'search_items' => 'Rechercher parmi les activités',
-        'popular_items' => 'Activités les plus recherchées'
+        'name' => 'Compétences',
+        'singular_name' => 'Compétences',
+        'all_items' => 'Toutes les compétences',
+        'edit_item' => 'Éditer la compétence',
+        'view_item' => 'Voir la compétence',
+        'update_item' => 'Mettre à jour la compétence',
+        'add_new_item' => 'Ajouter une compétence',
+        'new_item_name' => 'Nouvelle compétence',
+        'search_items' => 'Rechercher parmi les compétences',
+        'popular_items' => 'Compétences les plus recherchées'
       );
     
     $arg_activites = array (
-        'label' => 'Activités',
+        'label' => 'Compétences',
         'labels' => $labels_activites,
         'hierarchical' => true,
         'capabilities' => $capabilities,
