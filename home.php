@@ -25,14 +25,15 @@ include("js/commons-map.php");
 
    <section role="activites">
        <h1>
-           Choix par activités <i></i>
+           Choix par compétences <i></i>
         </h1>
-       <p>Accédez aux sorties en choisissant des activités</p>
+       <p>Accédez aux sorties en choisissant des compétences</p>
        <div role="filtre-activites">               
             <?php
             // Creation de la liste des terms de la taxonomie nommée
                 $argsTerms = array(
-                    'orderby'    => 'asc',
+                    'order'      => 'ASC',
+                    'orderby'    => 'slug',
                     'hide_empty' => true,
                 );
             $terms=get_terms(activites,$argsTerms); 

@@ -59,13 +59,14 @@ else {
         </div>
 
         <div>
-            <h3>Activites</h3>
-            <!-- *******************   ACTIVITES *******************  -->
+            <h3>Compétences</h3>
+            <!-- *******************   ACTIVITES > Devenu COMPETENCES... *******************  -->
             <div role="filtre-activites">               
                 <?php
                 // Creation de la liste des terms de la taxonomie nommée
                     $argsTerms = array(
-                        'orderby'    => 'asc',
+                        'order'      => 'ASC',
+                        'orderby'    => 'slug',
                         'hide_empty' => 0
                     );
                 $terms=get_terms(activites,$argsTerms); 
@@ -73,7 +74,7 @@ else {
                 if  ($terms) {
                   foreach ($terms  as $term ) {
                       if( has_term( $term->slug, 'activites' ) ): {
-                            echo '<figure class="active">
+                            echo '<figure class="active" title="'.$term->name.'">
                                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 245.986 254.986" enable-background="new 0 0 245.986 254.986" xml:space="preserve">
 
                                     <use xlink:href="#'.$term->slug.'" /> </svg>
