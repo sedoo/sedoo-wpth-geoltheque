@@ -2,3 +2,4 @@
 font/fontello-*/
 font/fontello-geoltheque/
 *.zip
+.DS_Store

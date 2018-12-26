@@ -55,7 +55,7 @@ include 'custom-config-images.php';
 */
 function geoltheque_acf_init() {
 	
-	acf_update_setting('google_api_key', 'AIzaSyDZUik7BZl1ibw28RI5KYLr8fFEjZwL8O8');
+	acf_update_setting('google_api_key', 'AIzaSyDQdaBNSQ-TpKKObn-l-S10KNSZ2BTpQNA');
 }
 
 add_action('acf/init', 'geoltheque_acf_init');
