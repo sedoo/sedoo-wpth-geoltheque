@@ -17,7 +17,7 @@
                 <a href="http://edu.obs-mip.fr" title="Lien vers le site du service éducatif de l'Observatoire Midi-Pyrénées" target="_blank"><img src="<?php echo get_bloginfo('template_directory') ?>/images/logo_serveduOMP.png" alt=""></a>
             </figure>
             <figure>
-                <a href="http://www.ac-toulouse.fr/" title="Lien vers le site de l'académie de Toulouse" target="_blank"><img src="<?php echo get_bloginfo('template_directory') ?>/images/ac-toulouse_logo.jpg" alt=""></a>
+                <a href="http://www.ac-toulouse.fr/" title="Lien vers le site de l'académie de Toulouse" target="_blank"><img src="<?php echo get_bloginfo('template_directory') ?>/images/logo_academieToulouse.png" alt=""></a>
             </figure>
         </section>
         <section role="links">
