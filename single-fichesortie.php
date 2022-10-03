@@ -70,7 +70,7 @@ $location = get_field('lieu-detail_sortie-edugeol');
                             'orderby'    => 'slug',
                             'hide_empty' => 0
                         );
-                    $terms=get_terms(activites,$argsTerms); 
+                    $terms=get_terms("activites",$argsTerms); 
 
                     if  ($terms) {
                       foreach ($terms  as $term ) {
@@ -144,6 +144,7 @@ $location = get_field('lieu-detail_sortie-edugeol');
                             
                             <article role="tabpanel" class="tab-pane fade" id="carte" >       
                                <?php              
+                               $argsQuery="";
                                 addMap("mapBrgm", "osm, brgm", "true", "".$location['lng'].",".$location['lat']."", "10", "false", $argsQuery, "true");
                                 ?>
                                  <div id="mapBrgm" ></div>              
@@ -421,9 +422,9 @@ $location = get_field('lieu-detail_sortie-edugeol');
                         // Utilisation de la fonction addMap()
 
                         // WP_Query arguments
-                //                        $argsQuery = array (
-                //                            'post_type' => array( 'fichesortie' )
-                //                        );
+                       $argsQuery = array (
+                           'post_type' => array( 'fichesortie' )
+                       );
 
                         addMap("mapOl", "osm", "false", "".$location['lng'].",".$location['lat']."", "12", "false", $argsQuery, "false");
                         ?>

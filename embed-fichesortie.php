@@ -44,7 +44,7 @@ else {
             'orderby'    => 'asc',
             'hide_empty' => 0
             );
-            $terms=get_terms(themes,$argsTerms); 
+            $terms=get_terms("themes",$argsTerms); 
 
             if  ($terms) 
                 {foreach ($terms  as $term ) {
@@ -69,7 +69,7 @@ else {
                         'orderby'    => 'slug',
                         'hide_empty' => 0
                     );
-                $terms=get_terms(activites,$argsTerms); 
+                $terms=get_terms("activites",$argsTerms); 
 
                 if  ($terms) {
                   foreach ($terms  as $term ) {
