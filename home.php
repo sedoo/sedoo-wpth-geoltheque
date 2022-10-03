@@ -36,7 +36,7 @@ include("js/commons-map.php");
                     'orderby'    => 'slug',
                     'hide_empty' => true,
                 );
-            $terms=get_terms(activites,$argsTerms); 
+            $terms=get_terms("activites",$argsTerms); 
 
             if  ($terms) {
               foreach ($terms  as $term ) {
@@ -67,7 +67,7 @@ include("js/commons-map.php");
             'orderby'    => 'asc',
             'hide_empty' => true,
             );
-            $terms=get_terms(themes,$argsTerms); 
+            $terms=get_terms("themes",$argsTerms); 
 
             if ($terms) {
                 foreach ($terms  as $term ) {
@@ -90,7 +90,7 @@ include("js/commons-map.php");
             'orderby'    => 'slug',
             'hide_empty' => true,
             );
-            $terms=get_terms(niveau,$argsTerms); 
+            $terms=get_terms("niveau",$argsTerms); 
 
             if ($terms) {
                 foreach ($terms  as $term ) {

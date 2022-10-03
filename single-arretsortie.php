@@ -87,7 +87,7 @@ else {
                     'orderby'    => 'slug',
                     'hide_empty' => 0
                 );
-            $terms=get_terms(activites,$argsTerms); 
+            $terms=get_terms("activites",$argsTerms); 
 
             if  ($terms) {
               foreach ($terms  as $term ) {
@@ -144,7 +144,8 @@ else {
                     </article>
                     
                     <article role="tabpanel" class="tab-pane fade" id="carte" >       
-                       <?php              
+                       <?php
+                       $argsQuery="";              
                         addMap("mapBrgm", "osm, brgm", "true", "".$location['lng'].",".$location['lat']."", "10", "false", $argsQuery, "true");
                         ?>
                          <div id="mapBrgm" ></div>              
